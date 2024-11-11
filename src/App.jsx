@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import About from "./pages/About";
@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Layout from "./pages/Layout";
 import OrderPlaced from "./pages/OrderPlaced";
-import { useState } from "react";
 
 // Separate the routes into their own component
 export const AppRoutes = ({ cart, setCart, totalQuantity }) => {
@@ -19,10 +18,10 @@ export const AppRoutes = ({ cart, setCart, totalQuantity }) => {
           path="/store"
           element={<Store cart={cart} setCart={setCart} />}
         />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Cart" element={<Cart cart={cart} setCart={setCart} />} />
-        <Route path="/OrderPlaced" element={<OrderPlaced />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path="/orderplaced" element={<OrderPlaced />} />
       </Route>
     </Routes>
   );
